@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+  <title>Image Stitching System</title>
+  
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    /* Ensure the navbar stays on top */
+    .navbar {
+      z-index: 10;
+      position: sticky;
+      top: 0;
+    }
+
+    /* Styling the background image */
+    .background-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* Send the image behind the content */
+      object-fit: cover; /* Ensure the image covers the entire viewport */
+    }
+
+    /* Content spacing to make the navbar and content visible */
+    .content {
+      position: relative;
+      z-index: 1;
+      margin-top: 56px; /* Adjust based on navbar height */
+      color: white;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="container-fluid bg-dark">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Image Stitching System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end mx-5" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item mx-2">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="{% url 'user_about' %}">About</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Login
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'user_login' %}">User Login</a></li>
+                <li><a class="dropdown-item" href="{% url 'admin_login' %}">Admin Login</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Background Image -->
+  <img src="{% static 'images/4.jpg' %}" alt="Background" class="background-image">
+
+  <!-- Content -->
+  <div class="content">
+    {% block content %}
+    {% endblock content %}
+  </div>
+
+  <!-- Scripts -->
+  <script src="{% static 'js/jquery.js' %}"></script>
+  <script src="{% static 'js/popper.js' %}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+    {% for message in messages %}
+      swal("{{ message }}");
+    {% endfor %}
+  </script>
+</body>
+</html>

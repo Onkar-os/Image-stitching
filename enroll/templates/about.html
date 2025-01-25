@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        body{
+            /* background-color: blueviolet; */
+            /* color: aliceblue; */
+        }
+        .img-fluid{
+            border: 1px solid;
+            border: radius 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="margin-top: 15px; margin-bottom: 30px;"><b>Image stitching System</b></h1>
+
+    <div class="container my-2">
+  
+
+    <p>
+        An Image Stitching System is a process used to combine multiple images into a single, high-quality panoramic or wide-angle image. This technique is widely used in fields such as photography, computer vision, and robotics. The process involves aligning overlapping images and seamlessly merging them to create a cohesive and wide view.
+
+        The system typically works by detecting key feature points in each image, such as edges, corners, or distinctive patterns, and then matching these points across the images. After aligning the images based on these feature matches, the overlapping areas are blended to reduce visible seams, resulting in a smooth and natural-looking final image.
+
+    </p>
+    <strong style="text-align: center; display: block; font-size: 24px; margin-top: 10px; margin-bottom: 10px;">Our Mission</strong>
+    <p>Our mission is to leverage innovation and technology to create solutions that empower individuals, organizations, and communities. We are dedicated to delivering high-quality, reliable, and impactful systems that address real-world challenges and enhance everyday life. By fostering creativity, embracing cutting-edge advancements, and maintaining a commitment to excellence, we aim to drive positive change and make a meaningful difference. Through collaboration, sustainability, and a people-first approach, we aspire to build a future where technology serves as a catalyst for progress, inclusivity, and shared success.</p>
+
+    <strong style="text-align: center; display: block; font-size: 24px; margin-top: 10px; margin-bottom: 10px;"> Why It Matters</strong>
+    
+    <p>
+      In an increasingly interconnected and technology-driven world, creating innovative solutions is more important than ever. "Why it matters" lies in the potential to solve real-world problems, enhance efficiency, and improve the quality of life for individuals and communities. Whether it's simplifying complex processes, bridging gaps in communication, or addressing critical challenges like sustainability and health, the impact of these solutions can be profound. By focusing on meaningful advancements, we can drive progress, foster inclusivity, and ensure that technology serves as a tool for empowerment and positive transformation. Ultimately, it matters because 
+      it shapes a future where challenges are met with resilience and opportunities are accessible to all. </p>
+
+        <p>
+            
+Developing an Image Stitching System involves a combination of advanced image processing techniques and robust software development practices. The project begins with understanding the requirements, such as the type of images to be stitched, the desired output quality, and the specific use case (e.g., panoramic photography, virtual reality, or medical imaging). The core of the system relies on algorithms for feature detection, image alignment, and seamless blending. Tools like OpenCV and machine learning frameworks are often used to implement these processes efficiently.
+
+        </p>
+        <div class="row">
+            <div class="col-6">
+            <img src="{% static 'images/1.jpg' %}" alt="image" class="img-fluid" style="width: 110%; height: 100%;"></div>
+            <div class="col-6">
+                <p>
+
+                    The development process includes designing modules for preprocessing (to correct distortions or enhance image quality), feature extraction (using algorithms like SIFT, ORB, or SURF), and image registration to align overlapping regions. Once aligned, the blending process minimizes visible seams and adjusts for differences in lighting or exposure to produce a high-quality stitched image.
+                </p>
+                <b>
+                    Technologies Used:
+
+                </b>
+                <b>Machine Learning:</b><p> Technologies Used: Machine Learning:</p>
+                <b>Automatic Image Alignment:</b><p>The system detects and aligns overlapping areas in images using advanced feature-matching algorithms like SIFT, ORB, or deep learning-based methods.</p>
+                
+            </div>
+        </div>
+        
+      
+    </div>
+</body>
+</html>
